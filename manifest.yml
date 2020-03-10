@@ -1,0 +1,10 @@
+---
+applications:
+- name: springbootLotoServicesApp
+  path: demo.jar
+  disk: 256M
+  memory: 1024M
+  random-route: true
+  buildpack: https://github.com/cloudfoundry/java-buildpack.git
+  env:
+    spring_application_name: springboot-loto-services
