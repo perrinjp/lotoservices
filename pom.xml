@@ -11,7 +11,7 @@
 	<groupId>com.perrinjp</groupId>
 	<artifactId>loto-services</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>demo-1</name>
+	<name>loto-services-</name>
 	<description>Services to generate loto draws</description>
 
 	<properties>
