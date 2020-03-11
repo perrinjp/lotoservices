@@ -5,6 +5,7 @@ applications:
   disk_quota: 256M
   memory: 1024M
   random-route: true
-  buildpack: java_buildpack
+  buildpacks: 
+    - java_buildpack
   env:
     spring_application_name: springboot-loto-services
