@@ -1,7 +1,6 @@
 package com.perrinjp.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.hateoas.EntityModel;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,19 +23,19 @@ public class LotoController {
 	}
 	
 	@GetMapping("/api/draw/649/{id}")
-	EntityModel<LotoGenerator> get649(@PathVariable Long id) {
+	LotoGenerator get649(@PathVariable Long id) {
 
 		LotoGenerator loto = repository.generateDraw("649",id);
 		
-		return new EntityModel<LotoGenerator>(loto);
+		return loto;
 	}
 	
 	@GetMapping("/api/draw/lotomax/{id}")
-	EntityModel<LotoGenerator> getLotoMax(@PathVariable Long id) {
+	LotoGenerator getLotoMax(@PathVariable Long id) {
 
 		LotoGenerator loto = repository.generateDraw("lotoMax",id);
 		
-		return new EntityModel<LotoGenerator>(loto);
+		return loto;
 	}
 
 }

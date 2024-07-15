@@ -56,16 +56,25 @@ public class LotoGenerator {
 		Random randomGenerator;
 		Long draw;
 		Integer i;
+		int typeOfDraw;
 		
 		loop = true;
 		i = 1;
 		bowls = new HashMap<Long, Long>();
 		randomGenerator = new Random();
+		if(loopCount == 6) 
+		{
+			typeOfDraw = 51;
+		}
+		else
+		{
+			typeOfDraw = 52;
+		}
 		
 		while(loop)
 		{
-			draw = new Long(randomGenerator.nextInt(49));
-			if(!bowls.containsValue(draw) && draw != 0)
+			draw = Long.valueOf(randomGenerator.nextInt(typeOfDraw));
+			if((typeOfDraw == 51 && draw <= 49 || typeOfDraw == 52 && draw <= 50) && !bowls.containsValue(draw) && draw != 0)
 			{
 				bowls.put(i.longValue(),draw);
 				i = i+1;
@@ -83,8 +92,6 @@ public class LotoGenerator {
 		result.setBowlFive(bowls.get(5L));
 		result.setBowlSix(bowls.get(6L));
 		result.setBowlSeven(bowls.get(7L));
-		
-		
 	}
 
 	public String getDrawType() {
